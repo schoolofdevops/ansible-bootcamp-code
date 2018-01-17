@@ -1,0 +1,11 @@
+---
+# tasks file for php
+  - name: install php 
+    package:
+      name: "{{ item }}"
+      state: installed
+    with_items: 
+      - php
+      - php-mysql
+      - nmap
+    notify: Restart apache service
