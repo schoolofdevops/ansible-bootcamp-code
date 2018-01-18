@@ -1,10 +1,10 @@
 ---
 # tasks file for php
-  - name: install php 
+  - name: install php
     package:
       name: "{{ item }}"
       state: installed
-    with_items: 
+    with_items:
       - php
       - php-mysql
       - nmap
