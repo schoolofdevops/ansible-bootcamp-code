@@ -20,16 +20,16 @@
 
 - name: Download and extract the release
   unarchive:
-    src: https://github.com/devopsdemoapps/devops-demo-app/archive/1.5.tar.gz
+    src: https://github.com/devopsdemoapps/devops-demo-app/archive/1.1.tar.gz
     dest: /opt/app/release
     owner: apache
     group: apache
-    creates: /opt/app/release/devops-demo-app-1.5
+    creates: /opt/app/release/devops-demo-app-1.1
     remote_src: yes
 
 - name: create a symlink
   file:
-    src: /opt/app/release/devops-demo-app-1.5
+    src: /opt/app/release/devops-demo-app-1.1
     dest: /var/www/html/app
     owner: apache
     group: apache
