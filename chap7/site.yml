@@ -1,4 +1,4 @@
 ---
   # This is a sitewide playbook
   # filename: site.yml
-  - import_plabook: app.yml
+  - import_playbook: app.yml
