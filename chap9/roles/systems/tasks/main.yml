@@ -1,0 +1,16 @@
+---
+# tasks file for systems
+  - name: remove user dojo
+    user: >
+      name=dojo
+      state=absent
+
+  - name: install tree utility
+    yum: >
+      name=tree
+      state=present
+
+  - name: install ntp
+    yum: >
+      name=ntp
+      state=installed

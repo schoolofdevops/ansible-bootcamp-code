@@ -1,0 +1,6 @@
+--- 
+  - name: playbook to configure db servers 
+    hosts: db
+    become: yes
+    roles:
+      - { role: geerlingguy.mysql }

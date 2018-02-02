@@ -1,0 +1,4 @@
+---
+# tasks file for apache
+- import_tasks: install.yml
+- import_tasks: service.yml

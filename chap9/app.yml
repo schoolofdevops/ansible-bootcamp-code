@@ -1,10 +1,9 @@
 ---
   - hosts: app
     become: true
-    vars: 
-      fav: 
+    vars:
+      fav:
         fruit: mango
-        car: suzuki
     roles:
       - apache
       - php 

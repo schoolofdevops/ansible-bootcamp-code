@@ -35,11 +35,10 @@
     group: apache
     state: link
 
-- name: application configs 
-  template: 
+- name: add application configs
+  template:
     src: config.ini.j2
     dest: /var/www/html/app/config.ini
     owner: apache
     group: apache
     mode: 0644
-    
