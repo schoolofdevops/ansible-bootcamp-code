@@ -1,0 +1,31 @@
+---
+
+  app: 
+    version: 1.5 
+    env: prod
+
+  fav:
+    color: yellow
+    fruit: guava
+
+  dbconn:
+    host: 192.168.61.14
+    user: devops
+    pass: GKkdw72Jil0ld
+    db: devopsdemo
+
+  haproxy_backend_httpchk: ''
+  haproxy_socket: /var/run/haproxy.sock
+
+
+  mysql_root_password: wxCb3snfSdG
+  mysql_databases:
+    - name: devopsdemo
+      encoding: latin1
+      collation: latin1_general_ci
+  mysql_users:
+    - name: devops
+      host: "%"
+      password: GKkdw72Jil0ld
+      priv: "devopsdemo.*:ALL"
+  mysql_bind_address: '0.0.0.0'

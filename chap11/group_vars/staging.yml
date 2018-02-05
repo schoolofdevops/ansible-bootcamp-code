@@ -1,0 +1,26 @@
+---
+
+  app: 
+    version: 1.5 
+    env: staging
+
+  fav:
+    color: blue
+    fruit: watermelon
+
+  dbconn:
+    host: 127.0.0.1
+    user: devops
+    pass: dfkl8d6msoYc0
+    db: devopsdemo
+
+  mysql_root_password: dfdvdHkst0ks72sY
+  mysql_databases:
+    - name: devopsdemo
+      encoding: latin1
+      collation: latin1_general_ci
+  mysql_users:
+    - name: devops
+      host: "%"
+      password: dfkl8d6msoYc0
+      priv: "devopsdemo.*:ALL"

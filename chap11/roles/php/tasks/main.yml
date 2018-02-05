@@ -1,0 +1,21 @@
+---
+# tasks file for php
+  - name: install php
+    package:
+      name: "{{ item }}"
+      state: installed
+    with_items:
+      - php
+      - php-mysql
+      - nmap
+    notify: Restart apache service
+
+  - name: additional php packages on debian 
+    package: 
+      name: "{{ item }}"
+      state: installed 
+    with_items: 
+      - libapache2-mod-php
+    when: ansible_os_family == 'Debian'
+    notify: Restart apache service
+    

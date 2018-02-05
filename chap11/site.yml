@@ -1,0 +1,12 @@
+---
+  # This is a sitewide playbook
+  # filename: site.yml
+    
+  - import_playbook: app.yml
+    tags: app
+
+  - import_playbook: lb.yml
+    tags: lb
+    
+  - import_playbook: db.yml
+    tags: db

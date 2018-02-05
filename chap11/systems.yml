@@ -1,0 +1,39 @@
+---
+  - name: base configs for all hosts
+    hosts: prod
+    become: true
+    tasks: 
+      - name: create admin user
+        user: >
+          name=admin
+          uid=5001
+          shell=/bin/bash 
+          home=/home/admin
+          state=present
+          
+      - name: remove user dojo
+        user: >
+          name=dojo
+          state=absent
+      
+      - name: install tree utility
+        yum: > 
+          name=tree
+          state=present
+      
+      - name: install ntp
+        yum: > 
+          name=ntp
+          state=installed
+
+  - name: App Server Configurations
+    hosts: app
+    become: true
+    tasks:
+      - name: create deploy user
+        user: name=deploy state=present uid=5003
+
+      - name: install git
+        package:  name=git  state=present
+
+...
