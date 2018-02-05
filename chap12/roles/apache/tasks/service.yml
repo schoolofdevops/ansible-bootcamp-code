@@ -1,0 +1,9 @@
+---
+- name: Starting Apache...
+  service: 
+    name: "{{ apache.service.name }}"  
+    state: "{{ apache.service.state }}" 
+    
+  tags: 
+    - apache 
+    - service  

@@ -1,0 +1,13 @@
+---
+  - hosts: app
+    become: true
+    vars:
+      fav:
+        fruit: mango
+    roles:
+      - { role: apache, tags: www }
+      - { role: php, tags: [ 'www', 'php' ] }
+      - { role: frontend, tags: devopsdemo }
+    tags: 
+      - frontend
+      

@@ -1,0 +1,9 @@
+---
+- name: Install Apache...
+  package: 
+    name: "{{ apache.package }}" 
+    state: latest
+    
+  tags: 
+    - apache 
+    - install

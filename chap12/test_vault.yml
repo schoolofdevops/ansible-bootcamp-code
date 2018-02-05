@@ -1,0 +1,12 @@
+---
+  - name: testing ansible vault 
+    hosts: 'local:app'
+    become: true 
+    tasks: 
+      - name: copy a file containing api keys 
+        copy: 
+          src: vault/api_keys
+          dest: /root/.api_keys
+          owner: root
+          group: root
+          mode: 0400

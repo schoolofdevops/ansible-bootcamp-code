@@ -1,0 +1,17 @@
+---
+  - name: cleanup database server
+    hosts: db 
+    become: true 
+    tasks: 
+      - name: stop mysql service 
+        service:
+          name: mysqld 
+          state: stopped 
+    
+      - name: uninstall mysql related packages  
+        package:
+          name: "{{ item }}"
+          state: absent
+        with_items: 
+          - mysql-server 
+          - mysql 
