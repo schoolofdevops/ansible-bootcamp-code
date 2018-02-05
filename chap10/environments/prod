@@ -7,7 +7,7 @@ lb
 [app]
 app1
 app2
-
+app3 ansible_user=devops ansible_ssh_pass=codespaces
 
 [db]
 db

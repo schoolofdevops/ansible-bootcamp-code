@@ -30,6 +30,8 @@
       address: 192.168.61.12:80
     - name: app2
       address: 192.168.61.13:80
+    - name: app3
+      address: 192.168.61.15:80
   haproxy_backend_httpchk: ''
   haproxy_socket: /var/run/haproxy.sock
 

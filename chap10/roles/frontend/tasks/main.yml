@@ -1,19 +1,19 @@
 ---
 # tasks file for frontend
-
+- include_vars: "{{ ansible_os_family }}.yml"
 - name: create app directory
   file:
     path: /opt/app
-    owner: apache
-    group: apache
+    owner: "{{ apache.user }}"
+    group: "{{ apache.group }}"
     mode: 0755
     state: directory
 
 - name: create release path
   file:
     path: /opt/app/release
-    owner: apache
-    group: apache
+    owner: "{{ apache.user }}"
+    group: "{{ apache.group }}"
     mode: 0755
     state: directory
 
@@ -22,8 +22,8 @@
   unarchive:
     src: https://github.com/devopsdemoapps/devops-demo-app/archive/{{ app.version }}.tar.gz
     dest: /opt/app/release
-    owner: apache
-    group: apache
+    owner: "{{ apache.user }}"
+    group: "{{ apache.group }}"
     creates: /opt/app/release/devops-demo-app-{{ app.version }}
     remote_src: yes
 
@@ -31,14 +31,14 @@
   file:
     src: /opt/app/release/devops-demo-app-{{ app.version }}
     dest: /var/www/html/app
-    owner: apache
-    group: apache
+    owner: "{{ apache.user }}"
+    group: "{{ apache.group }}"
     state: link
 
 - name: add application configs
   template:
     src: config.ini.j2
     dest: /var/www/html/app/config.ini
-    owner: apache
-    group: apache
+    owner: "{{ apache.user }}"
+    group: "{{ apache.group }}"
     mode: 0644

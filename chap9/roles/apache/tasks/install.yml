@@ -1,6 +1,9 @@
 ---
 - name: Install Apache...
-  yum: name=httpd state=latest
+  package: 
+    name: "{{ apache.package }}" 
+    state: latest
+    
   tags: 
     - apache 
     - install
