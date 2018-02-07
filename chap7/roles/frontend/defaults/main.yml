@@ -1,18 +1,2 @@
 ---
 # defaults file for frontend
-  app: 
-    version: 1.5
-    env: LOCALDEV
-    
-  fav: 
-    color: white
-    fruit: guava
-    car: nissan
-    laptop: toshiba
-    
-  dbconn: 
-    host: localhost 
-    user: root
-    pass: changeme
-    db: devopsdemo
-    
